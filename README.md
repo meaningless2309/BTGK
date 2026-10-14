@@ -39,10 +39,13 @@ trò ở góc trên bên phải.
 
 ## Cấu trúc thư mục
 ```
-trang-chu/
+project/
 ├── index.html
-├── style.css
-├── script.js
+├── css/
+│   └── style.css
+├── js/
+│   └── main.js
+├── assets/
 └── README.md
 ```
 
