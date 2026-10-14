@@ -1,1 +1,257 @@
+/* =========================================================
+   CultureTrail — Trang chủ (bản độc lập)
+   Nền giấy, xanh rừng, điểm nhấn đất nung; Noto Serif (tiêu đề)
+   + Inter (giao diện). Bo góc 12px cho thẻ, 6px cho nút/ô nhập.
+   ========================================================= */
 
+:root{
+  --paper:      #F5F1E8;
+  --surface:    #FFFDF7;
+  --forest:     #183F34;
+  --forest-700: #0f2b23;
+  --clay:       #AC5137;
+  --clay-700:   #8a3f2b;
+  --leaf-soft:  #E6ECDD;
+  --ink:        #22291f;
+  --ink-soft:   #5b6358;
+  --border:     #E4DECD;
+
+  --font-serif: "Noto Serif", Georgia, serif;
+  --font-sans:  "Inter", system-ui, -apple-system, sans-serif;
+
+  --radius-control: 6px;
+  --radius-card: 12px;
+}
+
+*{ box-sizing: border-box; }
+body{
+  margin:0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.55;
+}
+h1, h2, h3, .serif{ font-family: var(--font-serif); font-weight:500; color: var(--ink); margin:0; }
+h1{ font-size: clamp(2rem, 1.6rem + 1.6vw, 3.25rem); line-height:1.12; }
+h2{ font-size: clamp(1.5rem, 1.3rem + 0.8vw, 2rem); line-height:1.2; }
+h3{ font-size: 1.375rem; }
+p{ margin:0; }
+a{ color: var(--clay); text-decoration:none; }
+a:hover{ color: var(--clay-700); }
+img{ max-width:100%; display:block; }
+
+.container{ max-width:1280px; margin:0 auto; padding:0 24px; }
+.eyebrow{
+  font-size:.78rem; font-weight:600; letter-spacing:.06em;
+  text-transform:uppercase; color: var(--clay); margin-bottom:.75rem;
+}
+
+/* ---------- Header ---------- */
+.site-header{
+  background: var(--surface);
+  border-bottom:1px solid var(--border);
+}
+.site-header .container{
+  display:flex; align-items:center; justify-content:space-between;
+  padding-top:18px; padding-bottom:18px; gap:24px; flex-wrap:wrap;
+}
+.brand{
+  font-family: var(--font-serif); font-size:1.375rem; color: var(--ink);
+  display:inline-flex; align-items:center; gap:10px;
+}
+.brand-icon{ width:28px; height:28px; }
+.main-nav{ display:flex; gap:32px; list-style:none; margin:0; padding:0; flex-wrap:wrap; }
+.main-nav a{ color: var(--ink); font-size:.95rem; }
+.main-nav a.active{ color: var(--clay); font-weight:600; }
+.account-nav{ display:flex; align-items:center; gap:20px; list-style:none; margin:0; padding:0; flex-wrap:wrap; }
+.account-nav a{ color: var(--ink-soft); font-size:.875rem; }
+
+/* ---------- Dropdown chọn vai trò ---------- */
+.role-switcher{ position:relative; }
+.role-trigger{
+  background:none; border:none; cursor:pointer;
+  color: var(--ink-soft); font-size:.875rem; font-family:var(--font-sans);
+  padding:0;
+}
+.role-trigger:hover{ color: var(--clay); }
+.role-menu{
+  display:none;
+  position:absolute; top:calc(100% + 10px); right:0;
+  background: var(--surface); border:1px solid var(--border);
+  border-radius: var(--radius-control);
+  list-style:none; margin:0; padding:6px;
+  min-width:160px;
+  box-shadow: 0 12px 24px rgba(0,0,0,.1);
+  z-index:40;
+}
+.role-menu.open{ display:block; }
+.role-menu button{
+  display:block; width:100%; text-align:left;
+  background:none; border:none; cursor:pointer;
+  padding:8px 10px; border-radius: var(--radius-control);
+  font-size:.875rem; color: var(--ink); font-family:var(--font-sans);
+}
+.role-menu button:hover{ background: var(--leaf-soft); }
+.role-menu button.active{ color: var(--clay); font-weight:600; }
+
+.nav-toggle{
+  display:none; background:none; border:1px solid var(--border);
+  border-radius: var(--radius-control); padding:8px 12px; font-size:1.1rem; cursor:pointer;
+}
+
+/* ---------- Hero ---------- */
+.hero{ padding: 64px 0; }
+.hero .container{
+  display:grid; grid-template-columns: 1.1fr 1fr; gap:56px; align-items:center;
+}
+.hero-text p.lead{ color: var(--ink-soft); font-size:1.15rem; margin:20px 0 28px; }
+.hero-actions{ display:flex; align-items:center; gap:24px; flex-wrap:wrap; margin-bottom:16px; }
+.hero-note{ font-size:.875rem; color: var(--ink-soft); margin:0; }
+.hero-img .img-block{ aspect-ratio:4/3; }
+.hero-img-meta{
+  display:flex; justify-content:space-between; font-size:.875rem;
+  color: var(--ink-soft); margin-top:10px;
+}
+.hero-img-meta .status{ color: var(--clay); display:flex; align-items:center; gap:6px; }
+.hero-img-meta .status::before{ content:""; width:7px; height:7px; border-radius:50%; background:currentColor; }
+.hero-img-link{ display:block; margin-top:6px; font-family:var(--font-serif); font-size:1.25rem; color:var(--ink); }
+.hero-img-link:hover{ color: var(--clay); }
+
+/* ---------- Nút ---------- */
+.btn{
+  display:inline-flex; align-items:center; gap:8px;
+  border-radius: var(--radius-control); border:1px solid transparent;
+  padding:12px 22px; font-size:.95rem; font-weight:600; cursor:pointer;
+  min-height:44px; font-family:var(--font-sans);
+}
+.btn-primary{ background: var(--forest); border-color: var(--forest); color:#fff; }
+.btn-primary:hover{ background: var(--forest-700); border-color: var(--forest-700); color:#fff; }
+.btn-outline-light{ background:transparent; border-color:#fff; color:#fff; }
+.btn-outline-light:hover{ background:#fff; color: var(--forest); }
+.btn-link{ color: var(--ink); font-weight:600; border:none; background:none; padding:0; min-height:auto; }
+
+/* ---------- Dải 3 ý ---------- */
+.band{ background: var(--forest); color:#fff; padding:28px 0; }
+.band .container{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+.band h3{ color:#fff; font-size:1.125rem; margin-bottom:6px; }
+.band p{ color:#b9c6bf; font-size:.9rem; }
+
+/* ---------- Lưới câu chuyện ---------- */
+.section{ padding: 56px 0; }
+.section-head{
+  display:flex; justify-content:space-between; align-items:flex-end;
+  margin-bottom:28px; gap:16px; flex-wrap:wrap;
+}
+.story-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+.card{
+  background: var(--surface); border:1px solid var(--border);
+  border-radius: var(--radius-card); overflow:hidden;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+/* Hiệu ứng chỉ có ý nghĩa khi dùng chuột trên máy tính: thẻ nhấc lên khi rê qua */
+.card:hover{ transform: translateY(-6px); box-shadow: 0 16px 32px rgba(15,43,35,.12); }
+.card .img-block{ height:220px; border-radius:0; }
+.card-body{ padding:20px; }
+.card-topic{ font-size:.8rem; color:var(--clay); font-weight:600; margin-bottom:8px; }
+.card-title{ font-family:var(--font-serif); font-size:1.15rem; margin-bottom:6px; }
+.card-title a{ color: var(--ink); }
+.card-meta{ font-size:.85rem; color: var(--ink-soft); margin-bottom:12px; }
+.card-actions{ display:flex; align-items:center; gap:16px; font-size:.85rem; }
+.card-actions .muted{ color: var(--ink-soft); }
+/* Nút "Lưu" — đổi trạng thái khi bấm, không cần máy chủ hay cơ sở dữ liệu */
+.save-btn{
+  background:none; border:none; cursor:pointer; padding:0;
+  color: var(--ink-soft); font-size:.85rem; font-family:var(--font-sans);
+}
+.save-btn:hover{ color: var(--ink); }
+.save-btn.saved{ color: var(--clay); font-weight:600; }
+/* Nút "Đọc câu chuyện" dùng <button> (mở modal) nhưng vẫn trông giống link cũ */
+.story-open{
+  background:none; border:none; padding:0; cursor:pointer;
+  color: var(--clay); font-size:.85rem; font-family:var(--font-sans); font-weight:400;
+}
+.story-open:hover{ color: var(--clay-700); text-decoration:underline; }
+
+/* ---------- Băng bộ sưu tập ---------- */
+.collection{ background: var(--leaf-soft); padding:56px 0; }
+.collection .container{ display:grid; grid-template-columns:1fr 1.3fr; gap:56px; align-items:center; }
+.collection .img-block{ aspect-ratio:4/3; }
+
+/* ---------- Khối thay ảnh (không dùng file ảnh nào) ---------- */
+.img-block{
+  width:100%;
+  border-radius: var(--radius-card);
+  background: linear-gradient(135deg, var(--clay), var(--forest));
+  display:flex; align-items:flex-end;
+  padding:16px;
+}
+.img-block span{
+  color:#fff; font-size:.8rem; font-weight:600;
+  background: rgba(0,0,0,.25);
+  padding:4px 10px; border-radius:999px;
+}
+.collection-tag{ font-size:.85rem; color: var(--forest); font-weight:600; margin-bottom:12px; display:flex; align-items:center; gap:6px; }
+.collection-tag::before{ content:""; width:7px; height:7px; border-radius:50%; background:currentColor; }
+.collection h2{ margin-bottom:16px; }
+.collection p.desc{ color: var(--ink-soft); margin-bottom:12px; }
+.collection p.credit{ color: var(--ink-soft); font-size:.875rem; margin-bottom:24px; }
+
+/* ---------- 3 bước ---------- */
+.steps h2{ margin-bottom:28px; }
+.step-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+.step-grid .card{ padding:24px; }
+.step-num{ font-family:var(--font-serif); font-size:1.75rem; color: var(--clay); opacity:.7; margin-bottom:8px; }
+.step-grid h3{ font-size:1.05rem; margin-bottom:8px; }
+.step-grid p{ font-size:.9rem; color: var(--ink-soft); }
+
+/* ---------- CTA cuối ---------- */
+.cta{ background: var(--forest-700); color:#fff; padding:56px 0; }
+.cta .container{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px; }
+.cta h2{ color:#fff; margin-bottom:8px; }
+.cta p{ color:#b9c6bf; }
+
+/* ---------- Footer ---------- */
+.site-footer{ background: var(--forest); color:#b9c6bf; padding:24px 0; }
+.site-footer .container{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; align-items:center; }
+.site-footer a{ color:#e7ece8; font-size:.9rem; }
+.footer-links{ display:flex; gap:20px; list-style:none; margin:0; padding:0; }
+.footer-brand{ font-family:var(--font-serif); color:#fff; }
+.footer-note{ font-size:.85rem; }
+
+/* ---------- Modal xem trước câu chuyện ---------- */
+.modal-overlay{
+  display:none;
+  position:fixed; inset:0;
+  background: rgba(15,43,35,.55);
+  align-items:center; justify-content:center;
+  padding:24px; z-index:50;
+}
+.modal-overlay.open{ display:flex; }
+.modal-box{
+  position:relative;
+  background: var(--surface);
+  border-radius: var(--radius-card);
+  max-width:460px; width:100%;
+  padding:32px;
+  box-shadow: 0 24px 48px rgba(0,0,0,.2);
+}
+.modal-box h3{ margin-bottom:16px; }
+.modal-box p#modalText{ color: var(--ink-soft); line-height:1.6; }
+.modal-close{
+  position:absolute; top:16px; right:16px;
+  background:none; border:none; cursor:pointer;
+  font-size:1.1rem; color: var(--ink-soft); line-height:1;
+  width:32px; height:32px; border-radius:50%;
+}
+.modal-close:hover{ background: var(--leaf-soft); color: var(--ink); }
+
+/* ---------- Responsive (menu mobile) ---------- */
+@media (max-width: 900px){
+  .hero .container, .collection .container{ grid-template-columns:1fr; }
+  .band .container, .story-grid, .step-grid{ grid-template-columns:1fr; }
+  .main-nav, .account-nav{ display:none; }
+  .main-nav.open, .account-nav.open{ display:flex; flex-direction:column; width:100%; }
+  .nav-toggle{ display:inline-flex; }
+  .site-header .container{ position:relative; }
+}
