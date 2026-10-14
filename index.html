@@ -1,1 +1,242 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CultureTrail — Đi qua một nơi. Hiểu thêm một đời.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<!-- ======================= HEADER ======================= -->
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html">
+      <img class="brand-icon"
+           src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='none' stroke='%23AC5137' stroke-width='2'/%3E%3Cpath d='M9 20 C12 12, 20 20, 23 12' fill='none' stroke='%23183F34' stroke-width='2.5' stroke-linecap='round'/%3E%3Ccircle cx='9' cy='20' r='2' fill='%23AC5137'/%3E%3Ccircle cx='23' cy='12' r='2' fill='%23183F34'/%3E%3C/svg%3E"
+           alt="Biểu tượng CultureTrail: hai điểm nối bằng một đường hành trình cong">
+      CultureTrail
+    </a>
+
+    <nav>
+      <ul class="main-nav">
+        <li><a class="active" href="#">Khám phá</a></li>
+        <li><a href="#">Bộ sưu tập</a></li>
+        <li><a href="#">Hành trình của tôi</a></li>
+      </ul>
+    </nav>
+
+    <ul class="account-nav">
+      <li><a href="#">Thông báo (3)</a></li>
+      <li class="role-switcher">
+        <button type="button" class="role-trigger" id="roleTrigger" aria-expanded="false">
+          Người khám phá ▾
+        </button>
+        <ul class="role-menu" id="roleMenu">
+          <li><button type="button" data-role="Người khám phá">Người khám phá</button></li>
+          <li><button type="button" data-role="Nghệ nhân">Nghệ nhân</button></li>
+          <li><button type="button" data-role="Biên tập">Biên tập</button></li>
+          <li><button type="button" data-role="Quản trị">Quản trị</button></li>
+        </ul>
+      </li>
+      <li><a href="#">Hà</a></li>
+    </ul>
+
+    <button class="nav-toggle" type="button" aria-label="Mở menu" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<main>
+
+  <!-- ======================= HERO ======================= -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-text">
+        <p class="eyebrow">Khám phá văn hóa theo câu chuyện</p>
+        <h1>Đi qua một nơi.<br>Hiểu thêm một đời.</h1>
+        <p class="lead">
+          Từ bàn xoay gốm Bát Tràng đến ánh đèn Hội An, gặp những con
+          người giữ gìn văn hóa — và viết nên hành trình của riêng bạn.
+        </p>
+        <div class="hero-actions">
+          <a href="#" class="btn btn-primary">→ Bắt đầu khám phá</a>
+          <a href="#" class="btn btn-link">Tạo hành trình cùng AI</a>
+        </div>
+        <p class="hero-note">Câu chuyện địa phương · Nghệ nhân kể · Bạn khám phá</p>
+      </div>
+
+      <div class="hero-img">
+        <div class="img-block" aria-label="Nghệ nhân gốm Bát Tràng"><span>Bát Tràng, Hà Nội</span></div>
+        <div class="hero-img-meta">
+          <span class="status">Câu chuyện nổi bật</span>
+          <span>Bát Tràng, Hà Nội · 8 phút đọc</span>
+        </div>
+        <a href="#" class="hero-img-link">Bàn tay giữ hồn đất ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= DẢI 3 Ý ======================= -->
+  <section class="band">
+    <div class="container">
+      <div>
+        <h3>Lắng nghe</h3>
+        <p>Văn hóa qua lời người trong cuộc</p>
+      </div>
+      <div>
+        <h3>Kết nối</h3>
+        <p>Câu chuyện, địa danh và sự kiện</p>
+      </div>
+      <div>
+        <h3>Lên đường</h3>
+        <p>Hành trình được bạn tự lựa chọn</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= LƯỚI CÂU CHUYỆN ======================= -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Những điều đáng lắng nghe</p>
+          <h2>Câu chuyện từ những miền đất</h2>
+        </div>
+        <a href="#">Xem tất cả câu chuyện</a>
+      </div>
+
+      <div class="story-grid">
+        <article class="card">
+          <div class="img-block" aria-hidden="true"><span>Bát Tràng</span></div>
+          <div class="card-body">
+            <p class="card-topic">Nghề thủ công · 8 phút đọc</p>
+            <h3 class="card-title"><a href="#">Bàn tay giữ hồn đất</a></h3>
+            <p class="card-meta">Bát Tràng · Hà Nội • Nguyễn Thu Hà</p>
+            <div class="card-actions">
+              <button type="button" class="story-open"
+                data-title="Bàn tay giữ hồn đất"
+                data-topic="Nghề thủ công · 8 phút đọc"
+                data-text="Ở một xưởng nhỏ tại Bát Tràng, Nguyễn Thu Hà kể về ký ức, sự kiên nhẫn và những thế hệ sống cùng đất. Buổi sáng bắt đầu bằng tiếng bàn xoay quay đều, và kết thúc bằng một mẻ gốm mới ra lò.">Đọc câu chuyện →</button>
+              <button type="button" class="save-btn">Lưu ♡</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="img-block" aria-hidden="true"><span>Hội An</span></div>
+          <div class="card-body">
+            <p class="card-topic">Nghề thủ công · 6 phút đọc</p>
+            <h3 class="card-title"><a href="#">Ánh đèn qua những mùa trăng</a></h3>
+            <p class="card-meta">Hội An · Quảng Nam • Trần Minh An</p>
+            <div class="card-actions">
+              <button type="button" class="story-open"
+                data-title="Ánh đèn qua những mùa trăng"
+                data-topic="Nghề thủ công · 6 phút đọc"
+                data-text="Ở một góc phố Hội An, Trần Minh An kể về nghề làm đèn lồng và những mùa trăng chị đã đi qua cùng khung tre, lụa màu. Mỗi chiếc đèn mang theo một tâm trạng riêng của người làm ra nó.">Đọc câu chuyện →</button>
+              <button type="button" class="save-btn">Lưu ♡</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="img-block" aria-hidden="true"><span>Huế</span></div>
+          <div class="card-body">
+            <p class="card-topic">Di sản &amp; kiến trúc · 7 phút đọc</p>
+            <h3 class="card-title"><a href="#">Một buổi sớm bên hiên Huế</a></h3>
+            <p class="card-meta">Huế · Thừa Thiên Huế • Lê Ngọc Linh</p>
+            <div class="card-actions">
+              <button type="button" class="story-open"
+                data-title="Một buổi sớm bên hiên Huế"
+                data-topic="Di sản & kiến trúc · 7 phút đọc"
+                data-text="Lê Ngọc Linh dẫn người đọc qua một ngôi nhà rường cũ ở Huế, nơi nhịp sống buổi sớm vẫn giữ nguyên như nhiều năm trước. Tiếng chổi tre, bộ phản gỗ, chiếc bình vôi cũ — mỗi chi tiết đều giữ một ký ức.">Đọc câu chuyện →</button>
+              <button type="button" class="save-btn">Lưu ♡</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= BĂNG BỘ SƯU TẬP ======================= -->
+  <section class="collection">
+    <div class="container">
+      <div class="img-block" aria-hidden="true"><span>Những bàn tay giữ nghề</span></div>
+      <div>
+        <p class="collection-tag">Bộ sưu tập · 6 câu chuyện</p>
+        <h2>Những bàn tay giữ nghề</h2>
+        <p class="desc">
+          Một tuyển chọn về đất, tre, lụa và những người chọn sống cùng
+          nghề. Đi từ câu chuyện đến xưởng nhỏ, từ ký ức đến trải nghiệm.
+        </p>
+        <p class="credit">Biên tập bởi Mai Phương · Nội dung mẫu</p>
+        <a href="#" class="btn btn-primary">→ Mở bộ sưu tập</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= 3 BƯỚC ======================= -->
+  <section class="section steps">
+    <div class="container">
+      <h2>Một hành trình bắt đầu từ sự tò mò</h2>
+      <div class="step-grid">
+        <div class="card">
+          <p class="step-num">01</p>
+          <h3>Chọn câu chuyện</h3>
+          <p>Tìm theo chủ đề, vùng miền hoặc điều bạn đang muốn hiểu.</p>
+        </div>
+        <div class="card">
+          <p class="step-num">02</p>
+          <h3>Ghé một địa danh</h3>
+          <p>Đọc bối cảnh, xem sự kiện và thông tin trước khi đến.</p>
+        </div>
+        <div class="card">
+          <p class="step-num">03</p>
+          <h3>Lưu hành trình</h3>
+          <p>Sắp xếp điểm dừng. AI gợi ý, bạn là người quyết định.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= CTA CUỐI ======================= -->
+  <section class="cta">
+    <div class="container">
+      <div>
+        <h2>Bạn có một câu chuyện để kể?</h2>
+        <p>Chia sẻ câu chuyện về nghề, người và nơi bạn gắn bó.</p>
+      </div>
+      <a href="#" class="btn btn-outline-light">Đăng ký nhà sáng tạo</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- ======================= FOOTER ======================= -->
+<footer class="site-footer">
+  <div class="container">
+    <span class="footer-brand">CultureTrail</span>
+    <ul class="footer-links">
+      <li><a href="#">Về chúng tôi</a></li>
+      <li><a href="#">Hướng dẫn</a></li>
+      <li><a href="#">Quyền riêng tư</a></li>
+      <li><a href="#">Liên hệ</a></li>
+    </ul>
+    <span class="footer-note">Nội dung và ảnh minh họa · 2026</span>
+  </div>
+</footer>
+
+<!-- ======================= MODAL XEM TRƯỚC CÂU CHUYỆN ======================= -->
+<div class="modal-overlay" id="storyModal">
+  <div class="modal-box">
+    <button type="button" class="modal-close" aria-label="Đóng">✕</button>
+    <p class="eyebrow" id="modalTopic"></p>
+    <h3 id="modalTitle"></h3>
+    <p id="modalText"></p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
