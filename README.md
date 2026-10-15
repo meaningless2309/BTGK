@@ -53,7 +53,7 @@ project/
 https://www.figma.com/design/WdIYXfLxl9EuLsQL4P2Nmv/CultureTrail?t=KB4BusjVNkw35gup-0
 
 ## Link Video
-`→ Dán link video trình bày (khoảng 3 phút) vào đây`
+https://youtu.be/6JIkSeCPlK0
 
 ## Link GitHub
 https://github.com/meaningless2309/BTGK/tree/main
